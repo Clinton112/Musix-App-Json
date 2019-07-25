@@ -30,7 +30,7 @@ public class TrackControl {
     }
 
 
-    @ApiOperation(value = "Saves track in database")
+    //@ApiOperation(value = "Saves track in database")
     @RequestMapping(value = "track", method = RequestMethod.POST)
     public ResponseEntity<Track> saveTrack(@RequestBody Track track) {
         ResponseEntity responseEntity;
@@ -46,7 +46,7 @@ public class TrackControl {
     }
 
 
-    @ApiOperation(value = "Gets all tracks from database")
+    //@ApiOperation(value = "Gets all tracks from database")
     @RequestMapping(value = "tracks", method = RequestMethod.GET)
     public ResponseEntity<List<Track>> showAllTracks() {
         List<Track> trackOne = trackService.showAllTracks();
@@ -54,7 +54,7 @@ public class TrackControl {
     }
 
 
-    @ApiOperation(value = "Update comment of a track")
+    //@ApiOperation(value = "Update comment of a track")
     @RequestMapping(value = "track", method = RequestMethod.PUT)
     public ResponseEntity<Track> updateTrack(@RequestBody Track track) {
         ResponseEntity responseEntity;
@@ -70,7 +70,7 @@ public class TrackControl {
     }
 
 
-    @ApiOperation(value = "Deletes a track from database")
+    //@ApiOperation(value = "Deletes a track from database")
     @RequestMapping(value = "track", method = RequestMethod.DELETE)
     public ResponseEntity<String> deleteTrack(@RequestBody Track track) {
         ResponseEntity responseEntity;
@@ -86,12 +86,12 @@ public class TrackControl {
     }
 
 
-    @ApiOperation(value = "Finds all the tracks with given name")
-    @RequestMapping(value = "track/{trackName}", method = RequestMethod.GET)
+   // @ApiOperation(value = "Finds all the tracks with given name")
+    /*@RequestMapping(value = "track/{trackName}", method = RequestMethod.GET)
     public ResponseEntity<List<Track>> getTrackByName(@PathVariable("trackName") String trackName) throws Exception {
         List<Track> trackOne = trackService.getTrackByName(trackName);
         return new ResponseEntity<List<Track>>(trackOne, HttpStatus.OK);
-    }
+    }*/
 
     @PostMapping("tracks")
     public ResponseEntity<?> getTracks(@RequestBody List<Track> track) throws RuntimeException,TrackAlreadyExistsException {

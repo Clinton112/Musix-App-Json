@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +19,7 @@ import javax.persistence.Id;
 @NoArgsConstructor //Creates a zero argument constructor
 @AllArgsConstructor //Creates an all argument constructor
 @Builder
+@Document(collection = "track")
 public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
