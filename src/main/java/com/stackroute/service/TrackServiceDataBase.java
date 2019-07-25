@@ -48,7 +48,7 @@ public class TrackServiceDataBase implements TrackService {
         if (trackRepository.existsById(track.getTrackID()))
         {
             Track trackOne = trackRepository.findById(track.getTrackID()).get();
-            trackOne.setComments(track.getComments());
+            trackOne.setTrackName(track.getTrackName());
             trackRepository.save(trackOne);
             return trackOne;
         }

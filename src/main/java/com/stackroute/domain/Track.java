@@ -1,6 +1,8 @@
 package com.stackroute.domain;
 
-import io.swagger.annotations.ApiModelProperty;
+import com.fasterxml.jackson.annotation.JsonFilter;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,17 +18,16 @@ import javax.persistence.Id;
 @NoArgsConstructor //Creates a zero argument constructor
 @AllArgsConstructor //Creates an all argument constructor
 @Builder
-
 public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
-    @ApiModelProperty(value = "ID of each track")
+    @JsonProperty("id")
     private int trackID;
 
-    @ApiModelProperty(value = "Name of each track")
+    @JsonProperty(value = "name")
     private String trackName;
 
-    @ApiModelProperty(value = "Comments for each track")
+    @JsonProperty(value = "artist")
     private String comments;
 }

@@ -1,5 +1,6 @@
 package com.stackroute.config;
 
+
 import com.stackroute.domain.Track;
 import com.stackroute.repository.TrackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,10 @@ public class ApplicationListenerStartup implements ApplicationListener<ContextRe
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent){
         logs.info("Inserting data on start");
 
-        Track trackOne = new Track(5,"When the night is over","Singer : Lord Huron");
-        trackRepository.save(trackOne);
-        Track trackTwo = new Track(6,"High on life","Singer : Bonn");
-        trackRepository.save(trackTwo);
+
+
+
+
 
         logs.info("data successfully inserted");
     }
